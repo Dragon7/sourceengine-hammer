@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{450E4609-31C3-4875-A8B0-C008DE3AE3ED}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</PreLinkEventUseInBuild>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</PostBuildEventUseInBuild>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</PreLinkEventUseInBuild>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>if EXIST ..\..\game\bin\$(TargetFileName) for /f "delims=" %%A in (%27attrib "..\..\game\bin\$(TargetFileName)"%27) do set valveTmpIsReadOnly="%%A"
+set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+if "%valveTmpIsReadOnlyLetter%"=="R" del /q "$(TargetDir)"$(TargetFileName)
+set path=..\..\game\bin%3b%path%</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/EHa  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\common;..\public;..\public\tier0;..\public\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;_DEBUG;DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <AssemblerOutput>
+      </AssemblerOutput>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ErrorReporting>Prompt</ErrorReporting>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)hammer_launcher.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;libcd;libcmt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>
+      </BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+    </Link>
+    <Manifest>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Manifest>
+    <Xdcmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Xdcmake>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)hammer.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Message>Publishing to ..\..\game\bin</Message>
+      <Command>copy "$(TargetDir)"$(TargetFileName) ..\..\game\bin\$(TargetFileName)
+if ERRORLEVEL 1 goto BuildEventFailed
+if exist "$(TargetDir)"$(TargetName).map copy "$(TargetDir)"$(TargetName).map ..\..\game\bin\$(TargetName).map
+copy "$(TargetDir)"$(TargetName).pdb ..\..\game\bin\$(TargetName).pdb
+if ERRORLEVEL 1 goto BuildEventFailed
+goto BuildEventOK
+:BuildEventFailed
+echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***
+del /q "$(TargetDir)"$(TargetFileName)
+exit 1
+:BuildEventOK
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>if EXIST ..\..\game\bin\$(TargetFileName) for /f "delims=" %%A in (%27attrib "..\..\game\bin\$(TargetFileName)"%27) do set valveTmpIsReadOnly="%%A"
+set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+if "%valveTmpIsReadOnlyLetter%"=="R" del /q "$(TargetDir)"$(TargetFileName)
+set path=..\..\game\bin%3b%path%
+if exist ..\devtools\bin\vpc.exe ..\devtools\bin\vpc.exe -crc hammer_launcher.vpc ea3b860a -crc ..\vpc_scripts\source_exe_win_win32_base.vpc 62638c47 -crc ..\vpc_scripts\version.vpc 26d8e8a7 -crc ..\vpc_scripts\loadaddress.vpc 49fd4a9f -crc ..\vpc_scripts\source_exe_win_win32_debug.vpc 78028684 -crc ..\vpc_scripts\source_exe_win_win32_release.vpc cb5c1854
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/EHa  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\common;..\public;..\public\tier0;..\public\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <AssemblerOutput>
+      </AssemblerOutput>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ErrorReporting>Prompt</ErrorReporting>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)hammer.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;libcd;libcmtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <BaseAddress>
+      </BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+    </Link>
+    <Manifest>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Manifest>
+    <Xdcmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Xdcmake>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)hammer.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Message>Publishing to ..\..\game\bin</Message>
+      <Command>call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetFileName) ..
+copy "$(TargetDir)"$(TargetFileName) ..\..\game\bin\$(TargetFileName)
+if ERRORLEVEL 1 goto BuildEventFailed
+if exist "$(TargetDir)"$(TargetName).map copy "$(TargetDir)"$(TargetName).map ..\..\game\bin\$(TargetName).map
+call ..\vpc_scripts\valve_p4_edit.cmd ..\..\game\bin\$(TargetName).pdb ..
+copy "$(TargetDir)"$(TargetName).pdb ..\..\game\bin\$(TargetName).pdb
+if ERRORLEVEL 1 goto BuildEventFailed
+goto BuildEventOK
+:BuildEventFailed
+echo *** ERROR! PostBuildStep FAILED for $(ProjectName)! EXE or DLL is probably running. ***
+del /q "$(TargetDir)"$(TargetFileName)
+exit 1
+:BuildEventOK
+call ..\devtools\bin\vsign.bat -noforcewritable ..\..\game\bin\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hammer_launcher.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dependencies\cstddef" />
+    <None Include="dependencies\exception" />
+    <None Include="dependencies\swprintf.inl" />
+    <None Include="dependencies\typeinfo" />
+    <None Include="dependencies\xstddef" />
+    <None Include="hammer_launcher.vpc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dependencies\AnalogCode.h" />
+    <ClInclude Include="dependencies\AppFramework.h" />
+    <ClInclude Include="dependencies\assert.h" />
+    <ClInclude Include="dependencies\BaseTsd.h" />
+    <ClInclude Include="dependencies\basetypes.h" />
+    <ClInclude Include="dependencies\bcrypt.h" />
+    <ClInclude Include="dependencies\ButtonCode.h" />
+    <ClInclude Include="dependencies\byteswap.h" />
+    <ClInclude Include="dependencies\callqueue.h" />
+    <ClInclude Include="dependencies\CdErr.h" />
+    <ClInclude Include="dependencies\CGuid.h" />
+    <ClInclude Include="dependencies\checksum_crc.h" />
+    <ClInclude Include="dependencies\CommDlg.h" />
+    <ClInclude Include="dependencies\commonmacros.h" />
+    <ClInclude Include="dependencies\compressed_vector.h" />
+    <ClInclude Include="dependencies\crtdbg.h" />
+    <ClInclude Include="dependencies\crtdefs.h" />
+    <ClInclude Include="dependencies\crtwrn.h" />
+    <ClInclude Include="dependencies\ctype.h" />
+    <ClInclude Include="dependencies\cvar.h" />
+    <ClInclude Include="dependencies\datamap.h" />
+    <ClInclude Include="dependencies\dbg.h" />
+    <ClInclude Include="dependencies\dbgflag.h" />
+    <ClInclude Include="dependencies\Dde.h" />
+    <ClInclude Include="dependencies\Ddeml.h" />
+    <ClInclude Include="dependencies\deformations.h" />
+    <ClInclude Include="dependencies\Dlgs.h" />
+    <ClInclude Include="dependencies\driverspecs.h" />
+    <ClInclude Include="dependencies\eh.h" />
+    <ClInclude Include="dependencies\excpt.h" />
+    <ClInclude Include="dependencies\fasttimer.h" />
+    <ClInclude Include="dependencies\filesystem.h" />
+    <ClInclude Include="dependencies\filesystem_init.h" />
+    <ClInclude Include="dependencies\filesystem_passthru.h" />
+    <ClInclude Include="dependencies\float.h" />
+    <ClInclude Include="dependencies\generichash.h" />
+    <ClInclude Include="dependencies\Guiddef.h" />
+    <ClInclude Include="dependencies\IAppSystem.h" />
+    <ClInclude Include="dependencies\IAppSystemGroup.h" />
+    <ClInclude Include="dependencies\IColorCorrection.h" />
+    <ClInclude Include="dependencies\icommandline.h" />
+    <ClInclude Include="dependencies\iconvar.h" />
+    <ClInclude Include="dependencies\icvar.h" />
+    <ClInclude Include="dependencies\idatacache.h" />
+    <ClInclude Include="dependencies\IHammer.h" />
+    <ClInclude Include="dependencies\IHTML.h" />
+    <ClInclude Include="dependencies\IImage.h" />
+    <ClInclude Include="dependencies\iinputsystem.h" />
+    <ClInclude Include="dependencies\imageformat.h" />
+    <ClInclude Include="dependencies\imaterial.h" />
+    <ClInclude Include="dependencies\imaterialsystem.h" />
+    <ClInclude Include="dependencies\imaterialsystemhardwareconfig.h" />
+    <ClInclude Include="dependencies\imdlcache.h" />
+    <ClInclude Include="dependencies\Ime_cmodes.h" />
+    <ClInclude Include="dependencies\Imm.h" />
+    <ClInclude Include="dependencies\inaddr.h" />
+    <ClInclude Include="dependencies\InputEnums.h" />
+    <ClInclude Include="dependencies\interface.h" />
+    <ClInclude Include="dependencies\istudiorender.h" />
+    <ClInclude Include="dependencies\ISurface.h" />
+    <ClInclude Include="dependencies\IVGui.h" />
+    <ClInclude Include="dependencies\IVguiMatInfo.h" />
+    <ClInclude Include="dependencies\IVguiMatInfoVar.h" />
+    <ClInclude Include="dependencies\kernelspecs.h" />
+    <ClInclude Include="dependencies\KeyCode.h" />
+    <ClInclude Include="dependencies\ktmtypes.h" />
+    <ClInclude Include="dependencies\lightdesc.h" />
+    <ClInclude Include="dependencies\limits.h" />
+    <ClInclude Include="dependencies\localflexcontroller.h" />
+    <ClInclude Include="dependencies\LZExpand.h" />
+    <ClInclude Include="dependencies\malloc.h" />
+    <ClInclude Include="dependencies\math.h" />
+    <ClInclude Include="dependencies\mathlib.h" />
+    <ClInclude Include="dependencies\math_pfns.h" />
+    <ClInclude Include="dependencies\mbstring.h" />
+    <ClInclude Include="dependencies\Mcx.h" />
+    <ClInclude Include="dependencies\mem.h" />
+    <ClInclude Include="dependencies\memalloc.h" />
+    <ClInclude Include="dependencies\memdbgoff.h" />
+    <ClInclude Include="dependencies\memdbgon.h" />
+    <ClInclude Include="dependencies\minmax.h" />
+    <ClInclude Include="dependencies\mmintrin.h" />
+    <ClInclude Include="dependencies\MMSystem.h" />
+    <ClInclude Include="dependencies\MouseCode.h" />
+    <ClInclude Include="dependencies\MsXml.h" />
+    <ClInclude Include="dependencies\Nb30.h" />
+    <ClInclude Include="dependencies\ncrypt.h" />
+    <ClInclude Include="dependencies\new.h" />
+    <ClInclude Include="dependencies\OAIdl.h" />
+    <ClInclude Include="dependencies\ObjBase.h" />
+    <ClInclude Include="dependencies\ObjIdl.h" />
+    <ClInclude Include="dependencies\Ole2.h" />
+    <ClInclude Include="dependencies\OleAuto.h" />
+    <ClInclude Include="dependencies\OleIdl.h" />
+    <ClInclude Include="dependencies\platform.h" />
+    <ClInclude Include="dependencies\PopPack.h" />
+    <ClInclude Include="dependencies\process.h" />
+    <ClInclude Include="dependencies\PropIdl.h" />
+    <ClInclude Include="dependencies\protected_things.h" />
+    <ClInclude Include="dependencies\PrSht.h" />
+    <ClInclude Include="dependencies\PshPack1.h" />
+    <ClInclude Include="dependencies\PshPack2.h" />
+    <ClInclude Include="dependencies\PshPack4.h" />
+    <ClInclude Include="dependencies\PshPack8.h" />
+    <ClInclude Include="dependencies\Reason.h" />
+    <ClInclude Include="dependencies\refcount.h" />
+    <ClInclude Include="dependencies\Rpc.h" />
+    <ClInclude Include="dependencies\RpcAsync.h" />
+    <ClInclude Include="dependencies\RpcDce.h" />
+    <ClInclude Include="dependencies\RpcDceP.h" />
+    <ClInclude Include="dependencies\RpcNdr.h" />
+    <ClInclude Include="dependencies\RpcNsi.h" />
+    <ClInclude Include="dependencies\RpcNsip.h" />
+    <ClInclude Include="dependencies\RpcNtErr.h" />
+    <ClInclude Include="dependencies\Rpcsal.h" />
+    <ClInclude Include="dependencies\sal.h" />
+    <ClInclude Include="dependencies\sal_supp.h" />
+    <ClInclude Include="dependencies\sdkddkver.h" />
+    <ClInclude Include="dependencies\sdv_driverspecs.h" />
+    <ClInclude Include="dependencies\ServProv.h" />
+    <ClInclude Include="dependencies\ShellAPI.h" />
+    <ClInclude Include="dependencies\sourceannotations.h" />
+    <ClInclude Include="dependencies\specstrings.h" />
+    <ClInclude Include="dependencies\specstrings_strict.h" />
+    <ClInclude Include="dependencies\specstrings_supp.h" />
+    <ClInclude Include="dependencies\specstrings_undef.h" />
+    <ClInclude Include="dependencies\ssemath.h" />
+    <ClInclude Include="dependencies\stdarg.h" />
+    <ClInclude Include="dependencies\stddef.h" />
+    <ClInclude Include="dependencies\stdio.h" />
+    <ClInclude Include="dependencies\stdlib.h" />
+    <ClInclude Include="dependencies\SteamCommon.h" />
+    <ClInclude Include="dependencies\SteamWriteMiniDump.h" />
+    <ClInclude Include="dependencies\StrAlign.h" />
+    <ClInclude Include="dependencies\string.h" />
+    <ClInclude Include="dependencies\stringpool.h" />
+    <ClInclude Include="dependencies\strtools.h" />
+    <ClInclude Include="dependencies\studio.h" />
+    <ClInclude Include="dependencies\texture_group_names.h" />
+    <ClInclude Include="dependencies\threadtools.h" />
+    <ClInclude Include="dependencies\Tvout.h" />
+    <ClInclude Include="dependencies\typeinfo.h" />
+    <ClInclude Include="dependencies\Unknwn.h" />
+    <ClInclude Include="dependencies\UrlMon.h" />
+    <ClInclude Include="dependencies\use_ansi.h" />
+    <ClInclude Include="dependencies\utlblockmemory.h" />
+    <ClInclude Include="dependencies\utlbuffer.h" />
+    <ClInclude Include="dependencies\utldict.h" />
+    <ClInclude Include="dependencies\utlfixedmemory.h" />
+    <ClInclude Include="dependencies\utlhash.h" />
+    <ClInclude Include="dependencies\utllinkedlist.h" />
+    <ClInclude Include="dependencies\utlmap.h" />
+    <ClInclude Include="dependencies\utlmemory.h" />
+    <ClInclude Include="dependencies\utlrbtree.h" />
+    <ClInclude Include="dependencies\utlsymbol.h" />
+    <ClInclude Include="dependencies\utlvector.h" />
+    <ClInclude Include="dependencies\vadefs.h" />
+    <ClInclude Include="dependencies\valve_off.h" />
+    <ClInclude Include="dependencies\valve_on.h" />
+    <ClInclude Include="dependencies\vcollide.h" />
+    <ClInclude Include="dependencies\vcrmode.h" />
+    <ClInclude Include="dependencies\vcr_shared.h" />
+    <ClInclude Include="dependencies\vector.h" />
+    <ClInclude Include="dependencies\vector2d.h" />
+    <ClInclude Include="dependencies\vector4d.h" />
+    <ClInclude Include="dependencies\VerRsrc.h" />
+    <ClInclude Include="dependencies\VGUI.h" />
+    <ClInclude Include="dependencies\vmatrix.h" />
+    <ClInclude Include="dependencies\vphysics_interface.h" />
+    <ClInclude Include="dependencies\vplane.h" />
+    <ClInclude Include="dependencies\vstdlib.h" />
+    <ClInclude Include="dependencies\vtf.h" />
+    <ClInclude Include="dependencies\wchartypes.h" />
+    <ClInclude Include="dependencies\WinBase.h" />
+    <ClInclude Include="dependencies\WinCon.h" />
+    <ClInclude Include="dependencies\WinCrypt.h" />
+    <ClInclude Include="dependencies\WinDef.h" />
+    <ClInclude Include="dependencies\Windows.h" />
+    <ClInclude Include="dependencies\WinEFS.h" />
+    <ClInclude Include="dependencies\WinError.h" />
+    <ClInclude Include="dependencies\WinGDI.h" />
+    <ClInclude Include="dependencies\WinIoCtl.h" />
+    <ClInclude Include="dependencies\WinNetWk.h" />
+    <ClInclude Include="dependencies\WinNls.h" />
+    <ClInclude Include="dependencies\WinNT.h" />
+    <ClInclude Include="dependencies\WinPerf.h" />
+    <ClInclude Include="dependencies\WinReg.h" />
+    <ClInclude Include="dependencies\WinSCard.h" />
+    <ClInclude Include="dependencies\WinSmCrd.h" />
+    <ClInclude Include="dependencies\WinSock.h" />
+    <ClInclude Include="dependencies\WinSpool.h" />
+    <ClInclude Include="dependencies\WinSvc.h" />
+    <ClInclude Include="dependencies\WinUser.h" />
+    <ClInclude Include="dependencies\WinVer.h" />
+    <ClInclude Include="dependencies\wnnc.h" />
+    <ClInclude Include="dependencies\WTypes.h" />
+    <ClInclude Include="dependencies\xbox_codeline_defines.h" />
+    <ClInclude Include="dependencies\xmmintrin.h" />
+    <ClInclude Include="dependencies\yvals.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\appframework.lib" />
+    <Library Include="lib\tier0.lib" />
+    <Library Include="lib\tier1.lib" />
+    <Library Include="lib\vstdlib.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
