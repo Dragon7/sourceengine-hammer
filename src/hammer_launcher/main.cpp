@@ -6,22 +6,22 @@
 
 #include <windows.h>
 #include <eh.h>
-#include "dependencies\AppFramework.h"
-#include "dependencies\ihammer.h"
-#include "dependencies\dbg.h"
-#include "dependencies\cvar.h"
-#include "dependencies\filesystem.h"
-#include "dependencies\imaterialsystem.h"
-#include "dependencies\istudiorender.h"
-#include "dependencies\filesystem_init.h"
-#include "dependencies\idatacache.h"
-#include "dependencies\imdlcache.h"
-#include "dependencies\vphysics_interface.h"
-#include "dependencies\ivgui.h"
-#include "dependencies\isurface.h"
-#include "dependencies\iinputsystem.h"
-#include "dependencies\icommandline.h"
-#include "dependencies\SteamWriteMinidump.h"
+#include "appframework/AppFramework.h"
+#include "ihammer.h"
+#include "tier0/dbg.h"
+#include "vstdlib/cvar.h"
+#include "filesystem.h"
+#include "materialsystem/imaterialsystem.h"
+#include "istudiorender.h"
+#include "filesystem_init.h"
+#include "datacache/idatacache.h"
+#include "datacache/imdlcache.h"
+#include "vphysics_interface.h"
+#include "vgui/ivgui.h"
+#include "vgui/isurface.h"
+#include "inputsystem/iinputsystem.h"
+#include "tier0/icommandline.h"
+#include "SteamWriteMinidump.h"
 
 //-----------------------------------------------------------------------------
 // Global systems
