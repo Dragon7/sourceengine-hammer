@@ -7,8 +7,12 @@ Feel free to fork this repo for any modifications or bug fixes.
 
 
 REQUIREMENTS:
+
 Visual Studio 2010 (Do not use VC++ Express, it must be visual studio 2010 because it has MFC support)
+https://my.visualstudio.com/Downloads?q=visual%20studio%202010&wt.mc_id=o~msft~vscom~older-downloads
 
 WinSDK 7.0a
+https://www.microsoft.com/en-us/download/details.aspx?id=8279
 
 DXSDK 2010
+https://www.microsoft.com/en-us/download/details.aspx?id=6812
