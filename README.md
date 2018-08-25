@@ -5,6 +5,7 @@ This is the leaked 2007 engine branch hammer editor.
 
 Feel free to fork this repo for any modifications or bug fixes.
 
+If you are getting black viewports with white lines set the gameinfo.txt appid to 218.
 
 REQUIREMENTS:
 
